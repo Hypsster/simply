@@ -13,7 +13,7 @@ import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
-import net.runelite.client.eventbus.EventBus;
+//import net.runelite.client.eventbus.EventBus;
 
 @Slf4j
 @PluginDescriptor(name = "Simply")
@@ -31,9 +31,10 @@ public class SimplyPlugin extends Plugin
     {
         int hitpointsTracker = client.getBoostedSkillLevel(Skill.HITPOINTS); // Stores HP Level in variable
 
+
         if (hitpointsTracker <= config.hpThresh())
         {
-            // Run this code
+            client.addChatMessage(ChatMessageType.GAMEMESSAGE, "", "Your HP is low!", null);
         }
 
     }
